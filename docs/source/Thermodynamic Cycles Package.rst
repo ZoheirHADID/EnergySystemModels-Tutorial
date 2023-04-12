@@ -1,14 +1,16 @@
 1. Thermodynamic Cycles Package
-=====
+===============================
 
 .. _installation:
 
 1.1. Fluid Source
 -----------------
+1.1.1. Input parameters
++++++++++++++++++++++++
 
 To use EnergySystemModels, first install it using pip:
 
-   .. list-table:: Title
+   .. list-table:: Input parameters of Fluid Source module
       :widths: 25 25 50 50
       :header-rows: 1
       
