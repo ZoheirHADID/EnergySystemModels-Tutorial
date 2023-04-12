@@ -1,10 +1,10 @@
-Thermodynamic Cycles Package
+1. Thermodynamic Cycles Package
 =====
 
 .. _installation:
 
-Installation
-------------
+1.1. Fluid Source
+-----------------
 
 To use EnergySystemModels, first install it using pip:
 
@@ -12,8 +12,8 @@ To use EnergySystemModels, first install it using pip:
 
    (.venv) $ pip install EnergySystemModels
 
-Creating recipes
-----------------
+1.2. Sink
+---------
 
 To retrieve a list of random ingredients,
 you can use the ``lumache.get_random_ingredients()`` function:
