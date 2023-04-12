@@ -11,7 +11,7 @@
 To use EnergySystemModels, first install it using pip:
 
    .. list-table:: Input parameters of Fluid Source module
-      :widths: 25 25 50 50
+      :widths: 25 25 25 25
       :header-rows: 1
       
       * - Symbol
