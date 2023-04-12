@@ -24,6 +24,10 @@ To use EnergySystemModels, first install it using pip:
         - Fluid/Refrigerant name
         - String
         - air,ammonia,R134a,...
+      * -
+        -
+        -
+        -
 
 1.2. Sink
 ---------
