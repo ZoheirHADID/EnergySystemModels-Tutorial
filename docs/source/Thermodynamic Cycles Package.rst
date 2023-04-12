@@ -48,6 +48,7 @@ Create Source Object :
 
 Input Data Setting : 
 
+#SOURCE.Timestamp="2023-04-12 20:28:22"
 >>> SOURCE.Pi_bar=1.01325
 >>> SOURCE.fluid="air"
 >>> SOURCE.F_kgs=1
@@ -71,6 +72,8 @@ src_F_kgh            4411.940477
 src_F_kgs               1.225539
 src_F_m3s               1.034805
 src_F_Sm3s                   1.0
+
+If no timestamp is provided, the model will consider the time corresponding to when the simulation was launched.
 
 1.2. Sink
 ---------
