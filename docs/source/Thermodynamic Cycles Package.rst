@@ -1,4 +1,4 @@
-Usage
+Thermodynamic Cycles Package
 =====
 
 .. _installation:
