@@ -61,6 +61,16 @@ Calculate Object :
 Print the output data :
 
 >>> print(SOURCE.df)
+                          Source
+Timestamp    2023-04-12 20:28:22
+src_Ti_degC                 25.0
+src_fluid                    air
+src_F_Sm3h                3600.0
+src_F_m3h            3725.299011
+src_F_kgh            4411.940477
+src_F_kgs               1.225539
+src_F_m3s               1.034805
+src_F_Sm3s                   1.0
 
 1.2. Sink
 ---------
