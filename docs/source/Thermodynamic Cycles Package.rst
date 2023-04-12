@@ -12,8 +12,8 @@ To use EnergySystemModels, first install it using pip:
       :widths: 25 25 50
       :header-rows: 1
       
-      * - Heading row 1, column 1
-        - Heading row 1, column 2
+      * - Symbol 1, column 1
+        - Description 1, column 2
         - Heading row 1, column 3
       * - Row 1, column 1
         -
