@@ -37,13 +37,17 @@ To use EnergySystemModels, first install it using pip:
 
 1.1.2. Example
 +++++++++++++++++++++++
+
 Load the library:
+
 >>> from ThermodynamicCycles.Source import Source
 
 Create Source Object :
+
 >>> SOURCE=Source.Object()
 
 Input Data Setting : 
+
 >>> SOURCE.Pi_bar=1.01325
 >>> SOURCE.fluid="air"
 >>> SOURCE.F_kgs=1
@@ -51,9 +55,11 @@ Input Data Setting :
 #SOURCE.F_Sm3h=1 #SOURCE.F_m3h=2480.143675 #SOURCE.F_kgh=3600
 
 Calculate Object :
+
 >>> SOURCE.calculate()
 
 Print the output data :
+
 >>> print(SOURCE.df)
 
 1.2. Sink
