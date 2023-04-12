@@ -40,8 +40,11 @@ To use EnergySystemModels, first install it using pip:
 For example:
 
 >>> from ThermodynamicCycles.Source import Source
-#Create Compressor Object
+
+Create Compressor Object :
+
 >>> SOURCE=Source.Object()
+
 #Data Input
 >>> SOURCE.Pi_bar=1.01325
 >>> SOURCE.fluid="air"
