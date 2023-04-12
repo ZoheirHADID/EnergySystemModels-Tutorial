@@ -2,7 +2,7 @@
 
 # -- Project information
 
-project = 'Lumache'
+project = 'EnergySystemModels'
 copyright = '2023, Zoheir HADID'
 author = 'Zoheir HADID'
 
