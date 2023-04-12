@@ -19,7 +19,7 @@ To use EnergySystemModels, first install it using pip:
       * - Ti_degC
         - Inlet temerature
         - K
-        - degC
+        - °C
       * - fluid
         - Fluid/Refrigerant name
         - String
