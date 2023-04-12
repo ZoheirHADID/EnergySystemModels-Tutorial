@@ -12,15 +12,18 @@ To use EnergySystemModels, first install it using pip:
       :widths: 25 25 50
       :header-rows: 1
       
-      * - Symbol 1, column 1
-        - Description 1, column 2
-        - Heading row 1, column 3
-      * - Row 1, column 1
-        -
-        - Row 1, column 3
-      * - Row 2, column 1
-        - Row 2, column 2
-        - Row 2, column 3
+      * - Symbol
+        - Description
+        - SI Units
+        - Used Units
+      * - Ti_degC
+        - Inlet temerature
+        - K
+        - °C
+      * - fluid
+        - Fluid/Refrigerant name
+        - String
+        - "air","ammonia","R134a",...
 
 1.2. Sink
 ---------
