@@ -8,7 +8,7 @@
 
 To use EnergySystemModels, first install it using pip:
 
-.. code-block:: console
+
 
    .. list-table:: Title
    :widths: 25 25 50
