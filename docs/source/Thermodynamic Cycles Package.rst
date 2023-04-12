@@ -9,7 +9,7 @@
 To use EnergySystemModels, first install it using pip:
 
    .. list-table:: Title
-      :widths: 25 25 50
+      :widths: 25 25 50 50
       :header-rows: 1
       
       * - Symbol
