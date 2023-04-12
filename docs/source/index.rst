@@ -15,5 +15,6 @@ Contents
 
 .. toctree::
 
+   Thermodynamic Cycles Package
    usage
    api
