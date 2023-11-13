@@ -1,6 +1,6 @@
 .. _titre_section:
 
-Centrale de traitement d'air
+2. Centrale de traitement d'air
 ==================================================================
 
 Ce document fournit une explication détaillée des fonctions Python pour divers calculs d'air humide.
@@ -30,12 +30,12 @@ Nomenclature des Variables
 | rho_ah   | Densité de l'air humide             | kg/m³          |
 +----------+-------------------------------------+----------------+
 
-Fonctions de calcul d'air humide
---------------------------------
+2.1. Fonctions de calcul d'air humide
+-------------------------------------
 
 
-Pvs(T)
--------
+2.1.1. Pvs(T)
+-------------
 
 .. function:: Pvs(T)
 
@@ -320,3 +320,7 @@ rho_ah(T, HR, P)
       Rah = \frac{Ra}{1 - \left(\frac{HR}{100} \cdot \frac{Psat}{P}\right) 
                   \cdot \left(1 - \frac{Ra}{Rv}\right)}
       \rho_ah = \frac{\rho_a \cdot Ra + \rho_v \cdot Rv}{Rah}
+
+
+2.2. Batterie chaude
+-------------------------------------
