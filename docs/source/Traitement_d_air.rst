@@ -175,9 +175,17 @@ T_Humidifier(HA_target, HA_init, Tinit)
    .. math::
 
       T = -100
+
+   .. math::
+
       \text{Erreur} = -\text{Enthalpie}(Tinit, HA_init) + \text{Enthalpie}(T, HA_target)
+
+   .. math::
+
       \text{Tant que Erreur} < 0 :
          T = T + 0.01
+   .. math::
+
          \text{Erreur} = -\text{Enthalpie}(Tinit, HA_init) + \text{Enthalpie}(T, HA_target)
       T\_Humidifier = T - 0.01
 
@@ -199,8 +207,12 @@ T_rosee(Pv)
 
       T = -100
       \text{Erreur} = -Pv + Pvs(T)
+   .. math::
+
       \text{Tant que Erreur} < 0 :
          T = T + 0.01
+   .. math::
+
          \text{Erreur} = -Pv + Pvs(T)
       T\_rosee = T - 0.01
 
@@ -269,8 +281,11 @@ rho_ah(T, HR, P)
 
    .. math::
       Pv = Psat \cdot \frac{HR}{100}
+   .. math::
       \rho_v = \frac{Pv}{Rv \cdot Tk}
+   .. math::
       \rho_a = \frac{P - Pv}{Ra \cdot Tk}
+   .. math::
       Rah = \frac{Ra}{1 - \left(\frac{HR}{100} \cdot \frac{Psat}{P}\right) 
                   \cdot \left(1 - \frac{Ra}{Rv}\right)}
       \rho_ah = \frac{\rho_a \cdot Ra + \rho_v \cdot Rv}{Rah}
