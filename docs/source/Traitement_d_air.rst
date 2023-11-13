@@ -370,6 +370,7 @@ La méthode `calculate()` de la classe `Object` effectue un bilan thermique pour
    .. math::
 
       \text{T\_in} = \text{air\_humide\_NB.Air3\_Tdb}(\frac{\text{HA\_in}}{1000}, \text{Inlet.P}, \text{h\_in})
+   .. math::
       \text{m\_as} = \frac{\text{F\_kgs}}{(1 + \frac{\text{HA\_in}}{1000})}
 
 4. **Calcul de l'Enthalpie et du Réchauffement Sensible :**
@@ -379,7 +380,9 @@ La méthode `calculate()` de la classe `Object` effectue un bilan thermique pour
    .. math::
 
       \text{Si T\_out\_target} > \text{T\_in}:
+   .. math::
          \text{h\_out} = \text{air\_humide.Enthalpie}(\text{T\_out\_target}, \text{HA\_in})
+   .. math::
          \text{Qth} = (\text{h\_out} - \text{h\_in}) \times \text{m\_as}
 
    Dans le cas contraire, si la température d'entrée est supérieure ou égale à la température cible, il n'y a aucun réchauffement et la charge thermique est nulle (`Qth = 0`).
@@ -391,7 +394,9 @@ La méthode `calculate()` de la classe `Object` effectue un bilan thermique pour
    .. math::
 
       \text{Outlet.HA} = \text{Inlet.HA}
+   .. math::
       \text{Outlet.h} = \text{h\_out}
+   .. math::
       \text{Outlet.F\_kgs} = \text{m\_as} \times (1 + \frac{\text{Outlet.HA}}{1000})
 
 Ce processus de calcul reflète le bilan thermique effectué par la batterie chaude, permettant de comprendre comment l'air est chauffé et conditionné au sein de la CTA.
