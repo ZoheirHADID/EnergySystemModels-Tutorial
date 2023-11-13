@@ -1,6 +1,6 @@
 .. _titre_section:
 
-Fonctions de calcul d'air humide
+Centrale de traitement d'air
 ==================================================================
 
 Ce document fournit une explication détaillée des fonctions Python pour divers calculs d'air humide.
@@ -30,6 +30,8 @@ Nomenclature des Variables
 | rho_ah   | Densité de l'air humide             | kg/m³          |
 +----------+-------------------------------------+----------------+
 
+Fonctions de calcul d'air humide
+--------------------------------
 
 Pvs(T)
 -------
