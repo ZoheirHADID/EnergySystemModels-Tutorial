@@ -61,8 +61,6 @@ Tw(Td, HR)
            0.00391838 \cdot HR^{3/2} \cdot \atan(0.023101 \cdot HR) - 
            4.686035
 
-   Basée sur l'étude de Roland Stull de l'Université de Colombie-Britannique.
-
 HA(Pvs, HR, P)
 --------------
 
@@ -86,9 +84,141 @@ HA(Pvs, HR, P)
       Pv = Pvs \cdot \frac{HR}{100}
       HA = 0.62198 \cdot \frac{Pv}{P - Pv} \cdot 1000
 
-   Calcul de l'humidité absolue en utilisant la pression de vapeur et la pression atmosphérique.
+HR(Pvs, HA, P)
+--------------
 
-... (autres fonctions) ...
+.. function:: HR(Pvs, HA, P)
+
+   Calcule l'humidité relative.
+
+   :param Pvs: Pression de vapeur saturée en Pascal.
+   :param HA: Humidité absolue.
+   :param P: Pression atmosphérique en Pascal.
+   :type Pvs: float
+   :type HA: float
+   :type P: float
+   :returns: Humidité relative en pourcentage.
+   :rtype: float
+
+   **Équation utilisée**:
+
+   .. math::
+
+      Pv = P \cdot \frac{HA}{1000} / \left(\frac{HA}{1000} + 0.62198\right)
+      HR = \frac{Pv}{Pvs} \cdot 100
+
+T_sat(HA_target)
+----------------
+
+.. function:: T_sat(HA_target)
+
+   Calcule la température de saturation.
+
+   :param HA_target: Humidité absolue cible.
+   :type HA_target: float
+   :returns: Température de saturation en degrés Celsius.
+   :rtype: float
+
+   **Équation utilisée**:
+
+   .. math::
+
+      T = -100
+      \text{Erreur} = HA(Pvs(T), 100) - HA_target
+      \text{Tant que Erreur} \leq 0 :
+         T = T + 0.02
+         \text{Erreur} = HA(Pvs(T), 100) - HA_target
+      T\_sat = T
+
+T_Humidifier(HA_target, HA_init, Tinit)
+---------------------------------------
+
+.. function:: T_Humidifier(HA_target, HA_init, Tinit)
+
+   Calcule la température pour un humidificateur.
+
+   :param HA_target: Humidité absolue cible.
+   :param HA_init: Humidité absolue initiale.
+   :param Tinit: Température initiale en degrés Celsius.
+   :type HA_target: float
+   :type HA_init: float
+   :type Tinit: float
+   :returns: Température pour l'humidificateur en degrés Celsius.
+   :rtype: float
+
+   **Équation utilisée**:
+
+   .. math::
+
+      T = -100
+      \text{Erreur} = -\text{Enthalpie}(Tinit, HA_init) + \text{Enthalpie}(T, HA_target)
+      \text{Tant que Erreur} < 0 :
+         T = T + 0.01
+         \text{Erreur} = -\text{Enthalpie}(Tinit, HA_init) + \text{Enthalpie}(T, HA_target)
+      T\_Humidifier = T - 0.01
+
+T_rosee(Pv)
+------------
+
+.. function:: T_rosee(Pv)
+
+   Calcule la température de rosée.
+
+   :param Pv: Pression partielle de vapeur d'eau.
+   :type Pv: float
+   :returns: Température de rosée en degrés Celsius.
+   :rtype: float
+
+   **Équation utilisée**:
+
+   .. math::
+
+      T = -100
+      \text{Erreur} = -Pv + Pvs(T)
+      \text{Tant que Erreur} < 0 :
+         T = T + 0.01
+         \text{Erreur} = -Pv + Pvs(T)
+      T\_rosee = T - 0.01
+
+Enthalpie(T, HA)
+-----------------
+
+.. function:: Enthalpie(T, HA)
+
+   Calcule l'enthalpie spécifique de l'air humide.
+
+   :param T: Température en degrés Celsius.
+   :param HA: Humidité absolue.
+   :type T: float
+   :type HA: float
+   :returns: Enthalpie spécifique en kJ/kg d'air sec.
+   :rtype: float
+
+   **Équation utilisée**:
+
+   .. math::
+
+      Enthalpie = 1.006 \cdot T + \frac{HA}{1000} \cdot (2501 + 1.0805 \cdot T)
+
+Temperature(Enthalpie, HA)
+--------------------------
+
+.. function:: Temperature(Enthalpie, HA)
+
+   Calcule la température à partir de l'enthalpie et de l'humidité absolue.
+
+   :param Enthalpie: Enthalpie spécifique.
+   :param HA: Humidité absolue.
+   :type Enthalpie: float
+   :type HA: float
+   :returns: Température en degrés Celsius.
+   :rtype: float
+
+   **Équation utilisée**:
+
+   .. math::
+
+      T = \frac{Enthalpie - \frac{HA}{1000} \cdot 2501}{1.006 + \frac{HA}{1000} \cdot 1.0805}
 
 rho_ah(T, HR, P)
 ----------------
@@ -111,11 +241,10 @@ rho_ah(T, HR, P)
    .. math::
 
       Tk = T + 273.15
+      Psat = Pvs(T)
       Pv = Psat \cdot \frac{HR}{100}
       \rho_v = \frac{Pv}{Rv \cdot Tk}
       \rho_a = \frac{P - Pv}{Ra \cdot Tk}
       Rah = \frac{Ra}{1 - \left(\frac{HR}{100} \cdot \frac{Psat}{P}\right) 
                   \cdot \left(1 - \frac{Ra}{Rv}\right)}
       \rho_ah = \frac{\rho_a \cdot Ra + \rho_v \cdot Rv}{Rah}
-
-   Cette formule calcule la densité de l'air humide en prenant en compte la température, l'humidité relative et la pression atmosphérique.
