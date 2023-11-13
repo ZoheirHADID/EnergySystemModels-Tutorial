@@ -76,6 +76,9 @@ Tw(Td, HR)
            0.00391838 \cdot HR^{3/2} \cdot \atan(0.023101 \cdot HR) - 
            4.686035
 
+   Cette formule est basée sur l'étude de Roland Stull de l'Université de Colombie-Britannique.
+
+
 HA(Pvs, HR, P)
 --------------
 
