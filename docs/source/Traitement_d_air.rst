@@ -22,9 +22,9 @@ blrrrrrr
 +----------+---------------------------------+-----------+
 | Td       | Température de rosée            | °C        |
 +----------+---------------------------------+-----------+
-| HR       | Humidité relative                | %         |
+| HR       | Humidité relative                | %        |
 +----------+---------------------------------+-----------+
-| HA       | Humidité absolue                 | g/kg d'air sec |
+| HA       | Humidité absolue           | g/kg d'air sec |
 +----------+---------------------------------+-----------+
 | Pv       | Pression partielle de vapeur d'eau | Pascal |
 +----------+---------------------------------+-----------+
