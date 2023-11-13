@@ -104,7 +104,7 @@ Nomenclature des Variables
 
 
 2.1.2. Tw(Td, HR)
-----------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. function:: Tw(Td, HR)
 
@@ -130,7 +130,7 @@ Nomenclature des Variables
 
 
 2.1.3. HA(Pvs, HR, P)
---------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. function:: HA(Pvs, HR, P)
 
@@ -156,7 +156,7 @@ Nomenclature des Variables
       HA = 0.62198 \cdot \frac{Pv}{P - Pv} \cdot 1000
 
 2.1.4. HR(Pvs, HA, P)
---------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. function:: HR(Pvs, HA, P)
 
@@ -182,7 +182,7 @@ Nomenclature des Variables
       HR = \frac{Pv}{Pvs} \cdot 100
 
 2.1.5. T_sat(HA_target)
-----------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. function:: T_sat(HA_target)
 
@@ -210,7 +210,7 @@ Nomenclature des Variables
       T\_sat = T
 
 2.1.6. T_Humidifier(HA_target, HA_init, Tinit)
----------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. function:: T_Humidifier(HA_target, HA_init, Tinit)
 
@@ -245,7 +245,7 @@ Nomenclature des Variables
       T\_Humidifier = T - 0.01
 
 2.1.7. T_rosee(Pv)
-------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. function:: T_rosee(Pv)
 
@@ -272,7 +272,7 @@ Nomenclature des Variables
       T\_rosee = T - 0.01
 
 2.1.8. Enthalpie(T, HA)
------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. function:: Enthalpie(T, HA)
 
@@ -312,7 +312,7 @@ Nomenclature des Variables
       T = \frac{Enthalpie - \frac{HA}{1000} \cdot 2501}{1.006 + \frac{HA}{1000} \cdot 1.0805}
 
 2.1.10. rho_ah(T, HR, P)
-----------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. function:: rho_ah(T, HR, P)
 
@@ -347,7 +347,7 @@ Nomenclature des Variables
 
 
 2.2. Batterie chaude
--------------------------------------
+---------------------
 
 La méthode `calculate()` de la classe `Object` effectue un bilan thermique pour la batterie chaude en suivant ces étapes :
 
