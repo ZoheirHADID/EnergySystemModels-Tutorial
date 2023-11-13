@@ -59,7 +59,7 @@ Nomenclature des Variables
 
 
 2.1.1. Pvs(T)
--------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. function:: Pvs(T)
 
