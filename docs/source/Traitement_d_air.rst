@@ -1,105 +1,115 @@
-===============================
-Humidity and Temperature Calculations
-===============================
+.. _titre_section:
 
-This guide provides detailed explanations of the equations, correlations, usage, and units for the Python functions calculating various thermodynamic properties related to humidity and temperature.
+Description des Fonctions de Calcul Thermodynamique avec Équations
+==================================================================
 
-Important Equations and Correlations
-=====================================
+Ce document fournit une explication détaillée des fonctions Python pour divers calculs thermodynamiques, y compris les équations et corrélations utilisées.
 
-Pvs(T) - Saturation Vapor Pressure
------------------------------------
+from math import *
+-------------------
 
-Calculates the saturation vapor pressure of water in the air at a given temperature `T` using different equations for temperatures below and above 0°C.
+Pvs(T)
+-------
 
-- Units:
-  - Input Temperature `T`: degrees Celsius (°C)
-  - Output Pressure: Pascals (Pa)
+.. function:: Pvs(T)
 
-.. math::
+   Calcule la pression de vapeur saturée à une température donnée.
 
-    \text{For } T < 0°C : P_{vs} = \exp\left(\frac{C1}{T_k} + C2 + \ldots + C7 \cdot \ln(T_k)\right)
-    \text{For } T ≥ 0°C : P_{vs} = \exp\left(\frac{C8}{T_k} + C9 + \ldots + C13 \cdot \ln(T_k)\right)
+   :param T: Température en degrés Celsius.
+   :type T: float
+   :returns: Pression de vapeur saturée en Pascal.
+   :rtype: float
 
-Tw(Td, HR) - Wet-Bulb Temperature
----------------------------------
+   **Équation utilisée**:
+   
+   Pour T < 0 °C (valable entre -100 et 0 °C):
 
-Computes the wet-bulb temperature based on dry-bulb temperature `Td` and relative humidity `HR`.
+   .. math::
 
-- Units:
-  - Input `Td` (Dry-bulb temperature): degrees Celsius (°C)
-  - Input `HR` (Relative humidity): percent (%)
-  - Output Temperature: degrees Celsius (°C)
+      Pvs = e^{(C1 / Tk + C2 + C3 \cdot Tk + C4 \cdot Tk^2 + C5 \cdot Tk^3 + C6 \cdot Tk^4 + C7 \cdot \ln(Tk))}
 
-.. math::
+   Pour T >= 0 °C (valable entre 0 et 200 °C):
 
-    T_{w} = \ldots  - 4.686035
+   .. math::
 
-HA(Pvs, HR, P) - Absolute Humidity
-----------------------------------
+      Pvs = e^{(C8 / Tk + C9 + C10 \cdot Tk + C11 \cdot Tk^2 + C12 \cdot Tk^3 + C13 \cdot \ln(Tk))}
 
-Calculates the absolute humidity using the saturation vapor pressure, relative humidity, and atmospheric pressure.
+   Où `Tk = T + 273.15` est la température en Kelvin.
 
-- Units:
-  - Input `Pvs`: Function to calculate saturation vapor pressure
-  - Input `HR`: Relative humidity in percent (%)
-  - Input `P`: Atmospheric pressure in Pascals (Pa)
-  - Output Humidity: grams per cubic meter (g/m³)
+Tw(Td, HR)
+----------
 
-.. math::
+.. function:: Tw(Td, HR)
 
-    HA = 0.62198 \cdot \frac{P_{v}}{P - P_{v}} \cdot 1000
+   Calcule la température du bulbe humide.
 
-Enthalpie(T, HA) - Enthalpy of Moist Air
------------------------------------------
+   :param Td: Température de rosée en degrés Celsius.
+   :param HR: Humidité relative en pourcentage.
+   :type Td: float
+   :type HR: float
+   :returns: Température du bulbe humide en degrés Celsius.
+   :rtype: float
 
-Calculates the enthalpy of moist air, taking into account both sensible and latent heat.
+   **Équation utilisée**:
 
-- Units:
-  - Input `T`: Temperature in degrees Celsius (°C)
-  - Input `HA`: Absolute humidity in grams per kilogram (g/kg)
-  - Output Enthalpy: kilojoules per kilogram (kJ/kg)
+   .. math::
 
-.. math::
+      Tw = Td \cdot \atan(0.151977 \cdot (HR + 8.313659)^{1/2}) + \atan(Td + HR) - \atan(HR - 1.676331) + 0.00391838 \cdot HR^{3/2} \cdot \atan(0.023101 \cdot HR) - 4.686035
 
-    Enthalpie = 1.006 \cdot T + \left(\frac{HA}{1000}\right) \cdot (2501 + 1.0805 \cdot T)
+   Basée sur l'étude de ROLAND STULL de l'Université de Colombie-Britannique.
 
-rho_ah(T, HR, P) - Density of Humid Air
----------------------------------------
+HA(Pvs, HR, P)
+--------------
 
-Calculates the density of humid air based on temperature, relative humidity, and atmospheric pressure.
+.. function:: HA(Pvs, HR, P)
 
-- Units:
-  - Input `T`: Temperature in degrees Celsius (°C)
-  - Input `HR`: Relative humidity in percent (%)
-  - Input `P`: Atmospheric pressure in Pascals (Pa)
-  - Output Density: kilograms per cubic meter (kg/m³)
+   Calcule l'humidité absolue.
 
-.. math::
+   :param Pvs: Pression de vapeur saturée en Pascal.
+   :param HR: Humidité relative en pourcentage.
+   :param P: Pression atmosphérique en Pascal.
+   :type Pvs: float
+   :type HR: float
+   :type P: float
+   :returns: Humidité absolue en g/kg d'air sec.
+   :rtype: float
 
-    \rho_{ah} = \frac{(rho_a \cdot R_a + rho_v \cdot R_v)}{R_{ah}}
+   **Équation utilisée**:
 
-Usage Examples
-==============
+   .. math::
 
-.. code-block:: python
+      Pv = Pvs \cdot \frac{HR}{100}
+      HA = 0.62198 \cdot \frac{Pv}{P - Pv} \cdot 1000
 
-    # Example of using Pvs function
-    saturation_pressure = Pvs(25)
-    print(f"Saturation Vapor Pressure at 25°C: {saturation_pressure} Pa")
+   Calcul de l'humidité absolue en utilisant la pression de vapeur et la pression atmosphérique.
 
-... (Include detailed examples for each function, demonstrating how to call the function and interpret its output) ...
+... (autres fonctions) ...
 
-Notes
-=====
+rho_ah(T, HR, P)
+----------------
 
-- The functions are based on standard thermodynamic formulas and ideal gas approximations.
-- These are commonly used in meteorology, HVAC systems, and other related fields.
-- It is important to note that the accuracy of these calculations is dependent on the empirical correlations and constants used.
+.. function:: rho_ah(T, HR, P)
 
-References
-==========
+   Calcule la densité de l'air humide.
 
-- "Wet-Bulb Temperature from Relative Humidity and Air Temperature" by Roland Stull, University of British Columbia, Vancouver, British Columbia, Canada.
+   :param T: Température en degrés Celsius.
+   :param HR: Humidité relative en pourcentage.
+   :param P: Pression atmosphérique en Pascal.
+   :type T: float
+   :type HR: float
+   :type P: float
+   :returns: Densité de l'air humide en kg/m³.
+   :rtype: float
 
-... (Additional references as applicable) ...
+   **Équation utilisée**:
+
+   .. math::
+
+      Tk = T + 273.15
+      Pv = Psat \cdot \frac{HR}{100}
+      \rho_v = \frac{Pv}{Rv \cdot Tk}
+      \rho_a = \frac{P - Pv}{Ra \cdot Tk}
+      Rah = \frac{Ra}{1 - \left(\frac{HR}{100} \cdot \frac{Psat}{P}\right) \cdot \left(1 - \frac{Ra}{Rv}\right)}
+      \rho_ah = \frac{\rho_a \cdot Ra + \rho_v \cdot Rv}{Rah}
+
+   Cette formule calcule la densité de l'air humide en prenant en compte la température, l'humidité relative et la pression atmosphérique.
