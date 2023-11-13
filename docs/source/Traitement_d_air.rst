@@ -98,7 +98,7 @@ Nomenclature des Variables
    Où `Tk = T + 273.15` est la température en Kelvin.
 
 
-Tw(Td, HR)
+2.1.2. Tw(Td, HR)
 ----------
 
 .. function:: Tw(Td, HR)
@@ -124,7 +124,7 @@ Tw(Td, HR)
    Cette formule est basée sur l'étude de Roland Stull de l'Université de Colombie-Britannique.
 
 
-HA(Pvs, HR, P)
+2.1.3. HA(Pvs, HR, P)
 --------------
 
 .. function:: HA(Pvs, HR, P)
@@ -150,7 +150,7 @@ HA(Pvs, HR, P)
 
       HA = 0.62198 \cdot \frac{Pv}{P - Pv} \cdot 1000
 
-HR(Pvs, HA, P)
+2.1.4. HR(Pvs, HA, P)
 --------------
 
 .. function:: HR(Pvs, HA, P)
@@ -176,7 +176,7 @@ HR(Pvs, HA, P)
 
       HR = \frac{Pv}{Pvs} \cdot 100
 
-T_sat(HA_target)
+2.1.5. T_sat(HA_target)
 ----------------
 
 .. function:: T_sat(HA_target)
@@ -204,7 +204,7 @@ T_sat(HA_target)
    .. math::
       T\_sat = T
 
-T_Humidifier(HA_target, HA_init, Tinit)
+2.1.6. T_Humidifier(HA_target, HA_init, Tinit)
 ---------------------------------------
 
 .. function:: T_Humidifier(HA_target, HA_init, Tinit)
@@ -239,7 +239,7 @@ T_Humidifier(HA_target, HA_init, Tinit)
          \text{Erreur} = -\text{Enthalpie}(Tinit, HA_init) + \text{Enthalpie}(T, HA_target)
       T\_Humidifier = T - 0.01
 
-T_rosee(Pv)
+2.1.7. T_rosee(Pv)
 ------------
 
 .. function:: T_rosee(Pv)
@@ -266,7 +266,7 @@ T_rosee(Pv)
          \text{Erreur} = -Pv + Pvs(T)
       T\_rosee = T - 0.01
 
-Enthalpie(T, HA)
+2.1.8. Enthalpie(T, HA)
 -----------------
 
 .. function:: Enthalpie(T, HA)
@@ -286,7 +286,7 @@ Enthalpie(T, HA)
 
       Enthalpie = 1.006 \cdot T + \frac{HA}{1000} \cdot (2501 + 1.0805 \cdot T)
 
-Temperature(Enthalpie, HA)
+2.1.9. Temperature(Enthalpie, HA)
 --------------------------
 
 .. function:: Temperature(Enthalpie, HA)
@@ -306,7 +306,7 @@ Temperature(Enthalpie, HA)
 
       T = \frac{Enthalpie - \frac{HA}{1000} \cdot 2501}{1.006 + \frac{HA}{1000} \cdot 1.0805}
 
-rho_ah(T, HR, P)
+2.1.10. rho_ah(T, HR, P)
 ----------------
 
 .. function:: rho_ah(T, HR, P)
