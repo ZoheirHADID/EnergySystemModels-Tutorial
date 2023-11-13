@@ -3,10 +3,32 @@
 Fonctions de calcul d'air humide
 ==================================================================
 
-Ce document fournit une explication détaillée des fonctions Python pour divers calculs thermodynamiques, en mettant l'accent sur les équations et corrélations utilisées.
+Ce document fournit une explication détaillée des fonctions Python pour divers calculs d'air humide.
 
-from math import *
--------------------
+Nomenclature des Variables
+--------------------------
+
++----------+---------------------------------+-----------+
+| Variable | Description                     | Unité     |
++==========+=================================+===========+
+| T        | Température                     | °C        |
++----------+---------------------------------+-----------+
+| Tk       | Température en Kelvin           | K         |
++----------+---------------------------------+-----------+
+| Pvs      | Pression de vapeur saturée      | Pascal    |
++----------+---------------------------------+-----------+
+| Td       | Température de rosée            | °C        |
++----------+---------------------------------+-----------+
+| HR       | Humidité relative                | %         |
++----------+---------------------------------+-----------+
+| HA       | Humidité absolue                 | g/kg d'air sec |
++----------+---------------------------------+-----------+
+| Pv       | Pression partielle de vapeur d'eau | Pascal |
++----------+---------------------------------+-----------+
+| P        | Pression atmosphérique          | Pascal    |
++----------+---------------------------------+-----------+
+| rho_ah   | Densité de l'air humide         | kg/m³     |
++----------+---------------------------------+-----------+
 
 Pvs(T)
 -------
