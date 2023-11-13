@@ -348,3 +348,51 @@ Nomenclature des Variables
 
 2.2. Batterie chaude
 -------------------------------------
+
+La méthode `calculate()` de la classe `Object` effectue un bilan thermique pour la batterie chaude en suivant ces étapes :
+
+1. **Calcul de la Pression à la Sortie :**
+   
+   La pression à la sortie (`Outlet.P`) est calculée en soustrayant la perte de pression (`P_drop`) de la pression à l'entrée (`Inlet.P`).
+
+   .. math::
+
+      \text{Outlet.P} = \text{Inlet.P} - \text{P\_drop}
+
+2. **Acquisition des Paramètres d'Entrée :**
+   
+   Les paramètres d'entrée tels que l'humidité absolue (`HA_in`), la pression (`P`), l'enthalpie (`h_in`) et le débit massique d'air (`F_kgs`) sont obtenus du port d'entrée (`Inlet`).
+
+3. **Calcul de la Température et du Débit Massique d'Air Sec à l'Entrée :**
+   
+   La température de l'air à l'entrée (`T_in`) est calculée à partir des valeurs d'humidité absolue, de pression et d'enthalpie. Le débit massique d'air sec (`m_as`) est également calculé.
+
+   .. math::
+
+      \text{T\_in} = \text{air\_humide\_NB.Air3\_Tdb}(\frac{\text{HA\_in}}{1000}, \text{Inlet.P}, \text{h\_in})
+      \text{m\_as} = \frac{\text{F\_kgs}}{(1 + \frac{\text{HA\_in}}{1000})}
+
+4. **Calcul de l'Enthalpie et du Réchauffement Sensible :**
+   
+   Si la température cible de sortie (`T_out_target`) est supérieure à la température d'entrée, il y a un réchauffement sensible de l'air. L'enthalpie à la sortie (`h_out`) est calculée, et la charge thermique (`Qth`) est déterminée.
+
+   .. math::
+
+      \text{Si T\_out\_target} > \text{T\_in}:
+         \text{h\_out} = \text{air\_humide.Enthalpie}(\text{T\_out\_target}, \text{HA\_in})
+         \text{Qth} = (\text{h\_out} - \text{h\_in}) \times \text{m\_as}
+
+   Dans le cas contraire, si la température d'entrée est supérieure ou égale à la température cible, il n'y a aucun réchauffement et la charge thermique est nulle (`Qth = 0`).
+
+5. **Mise à Jour des Paramètres de Sortie :**
+   
+   Les paramètres de sortie, y compris l'humidité absolue (`Outlet.HA`), l'enthalpie (`Outlet.h`) et le débit massique d'air (`Outlet.F_kgs`), sont mis à jour en fonction des calculs effectués.
+
+   .. math::
+
+      \text{Outlet.HA} = \text{Inlet.HA}
+      \text{Outlet.h} = \text{h\_out}
+      \text{Outlet.F\_kgs} = \text{m\_as} \times (1 + \frac{\text{Outlet.HA}}{1000})
+
+Ce processus de calcul reflète le bilan thermique effectué par la batterie chaude, permettant de comprendre comment l'air est chauffé et conditionné au sein de la CTA.
+
