@@ -82,6 +82,9 @@ HA(Pvs, HR, P)
    .. math::
 
       Pv = Pvs \cdot \frac{HR}{100}
+
+   .. math::
+
       HA = 0.62198 \cdot \frac{Pv}{P - Pv} \cdot 1000
 
 HR(Pvs, HA, P)
@@ -105,6 +108,9 @@ HR(Pvs, HA, P)
    .. math::
 
       Pv = P \cdot \frac{HA}{1000} / \left(\frac{HA}{1000} + 0.62198\right)
+
+   .. math::
+
       HR = \frac{Pv}{Pvs} \cdot 100
 
 T_sat(HA_target)
@@ -242,6 +248,8 @@ rho_ah(T, HR, P)
 
       Tk = T + 273.15
       Psat = Pvs(T)
+
+   .. math::
       Pv = Psat \cdot \frac{HR}{100}
       \rho_v = \frac{Pv}{Rv \cdot Tk}
       \rho_a = \frac{P - Pv}{Ra \cdot Tk}
