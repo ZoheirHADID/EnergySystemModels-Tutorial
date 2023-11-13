@@ -3,7 +3,7 @@
 Description des Fonctions de Calcul Thermodynamique avec Équations
 ==================================================================
 
-Ce document fournit une explication détaillée des fonctions Python pour divers calculs thermodynamiques, y compris les équations et corrélations utilisées.
+Ce document fournit une explication détaillée des fonctions Python pour divers calculs thermodynamiques, en mettant l'accent sur les équations et corrélations utilisées.
 
 from math import *
 -------------------
@@ -21,18 +21,20 @@ Pvs(T)
    :rtype: float
 
    **Équation utilisée**:
-   
-   Pour T < 0 °C (valable entre -100 et 0 °C):
+
+   Pour T < 0 °C (valable entre -100 et 0 °C) :
 
    .. math::
 
-      Pvs = e^{(C1 / Tk + C2 + C3 \cdot Tk + C4 \cdot Tk^2 + C5 \cdot Tk^3 + C6 \cdot Tk^4 + C7 \cdot \ln(Tk))}
+      Pvs = e^{(C1 / Tk + C2 + C3 \cdot Tk + C4 \cdot Tk^2 + 
+               C5 \cdot Tk^3 + C6 \cdot Tk^4 + C7 \cdot \ln(Tk))}
 
-   Pour T >= 0 °C (valable entre 0 et 200 °C):
+   Pour T >= 0 °C (valable entre 0 et 200 °C) :
 
    .. math::
 
-      Pvs = e^{(C8 / Tk + C9 + C10 \cdot Tk + C11 \cdot Tk^2 + C12 \cdot Tk^3 + C13 \cdot \ln(Tk))}
+      Pvs = e^{(C8 / Tk + C9 + C10 \cdot Tk + C11 \cdot Tk^2 + 
+               C12 \cdot Tk^3 + C13 \cdot \ln(Tk))}
 
    Où `Tk = T + 273.15` est la température en Kelvin.
 
@@ -54,9 +56,12 @@ Tw(Td, HR)
 
    .. math::
 
-      Tw = Td \cdot \atan(0.151977 \cdot (HR + 8.313659)^{1/2}) + \atan(Td + HR) - \atan(HR - 1.676331) + 0.00391838 \cdot HR^{3/2} \cdot \atan(0.023101 \cdot HR) - 4.686035
+      Tw = Td \cdot \atan(0.151977 \cdot (HR + 8.313659)^{1/2}) + 
+           \atan(Td + HR) - \atan(HR - 1.676331) + 
+           0.00391838 \cdot HR^{3/2} \cdot \atan(0.023101 \cdot HR) - 
+           4.686035
 
-   Basée sur l'étude de ROLAND STULL de l'Université de Colombie-Britannique.
+   Basée sur l'étude de Roland Stull de l'Université de Colombie-Britannique.
 
 HA(Pvs, HR, P)
 --------------
@@ -109,7 +114,8 @@ rho_ah(T, HR, P)
       Pv = Psat \cdot \frac{HR}{100}
       \rho_v = \frac{Pv}{Rv \cdot Tk}
       \rho_a = \frac{P - Pv}{Ra \cdot Tk}
-      Rah = \frac{Ra}{1 - \left(\frac{HR}{100} \cdot \frac{Psat}{P}\right) \cdot \left(1 - \frac{Ra}{Rv}\right)}
+      Rah = \frac{Ra}{1 - \left(\frac{HR}{100} \cdot \frac{Psat}{P}\right) 
+                  \cdot \left(1 - \frac{Ra}{Rv}\right)}
       \rho_ah = \frac{\rho_a \cdot Ra + \rho_v \cdot Rv}{Rah}
 
    Cette formule calcule la densité de l'air humide en prenant en compte la température, l'humidité relative et la pression atmosphérique.
