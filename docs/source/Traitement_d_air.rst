@@ -1,6 +1,6 @@
 .. _titre_section:
 
-Fonctions de Calcul d'air humide
+Description des Fonctions de Calcul Thermodynamique avec Équations
 ==================================================================
 
 Ce document fournit une explication détaillée des fonctions Python pour divers calculs thermodynamiques, en mettant l'accent sur les équations et corrélations utilisées.
@@ -19,6 +19,36 @@ Pvs(T)
    :type T: float
    :returns: Pression de vapeur saturée en Pascal.
    :rtype: float
+
+   **Coefficients utilisés**:
+
+   +-----+------------------+
+   | C1  | -5.6745359e3     |
+   +-----+------------------+
+   | C2  | 6.3925247        |
+   +-----+------------------+
+   | C3  | -9.677843e-3     |
+   +-----+------------------+
+   | C4  | 6.2215701e-7     |
+   +-----+------------------+
+   | C5  | 2.0747825e-9     |
+   +-----+------------------+
+   | C6  | -9.484024e-13    |
+   +-----+------------------+
+   | C7  | 4.1635019        |
+   +-----+------------------+
+   | C8  | -5.8002206e3     |
+   +-----+------------------+
+   | C9  | 1.3914993        |
+   +-----+------------------+
+   | C10 | -4.8640239e-2    |
+   +-----+------------------+
+   | C11 | 4.1764768e-5     |
+   +-----+------------------+
+   | C12 | -1.4452093e-8    |
+   +-----+------------------+
+   | C13 | 6.5459673        |
+   +-----+------------------+
 
    **Équation utilisée**:
 
