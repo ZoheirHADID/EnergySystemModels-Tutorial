@@ -148,10 +148,15 @@ T_sat(HA_target)
    .. math::
 
       T = -100
+   .. math::
       \text{Erreur} = HA(Pvs(T), 100) - HA_target
+   .. math::
       \text{Tant que Erreur} \leq 0 :
+   .. math::
          T = T + 0.02
+   .. math::
          \text{Erreur} = HA(Pvs(T), 100) - HA_target
+   .. math::
       T\_sat = T
 
 T_Humidifier(HA_target, HA_init, Tinit)
