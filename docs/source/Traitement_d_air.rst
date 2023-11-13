@@ -292,7 +292,7 @@ Nomenclature des Variables
       Enthalpie = 1.006 \cdot T + \frac{HA}{1000} \cdot (2501 + 1.0805 \cdot T)
 
 2.1.9. Temperature(Enthalpie, HA)
---------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. function:: Temperature(Enthalpie, HA)
 
@@ -348,6 +348,8 @@ Nomenclature des Variables
 
 2.2. Batterie chaude
 ---------------------
+Définition du modèle
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 La méthode `calculate()` de la classe `Object` effectue un bilan thermique pour la batterie chaude en suivant ces étapes :
 
@@ -400,4 +402,7 @@ La méthode `calculate()` de la classe `Object` effectue un bilan thermique pour
       \text{Outlet.F\_kgs} = \text{m\_as} \times (1 + \frac{\text{Outlet.HA}}{1000})
 
 Ce processus de calcul reflète le bilan thermique effectué par la batterie chaude, permettant de comprendre comment l'air est chauffé et conditionné au sein de la CTA.
+
+Exemple d'utilisation
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
