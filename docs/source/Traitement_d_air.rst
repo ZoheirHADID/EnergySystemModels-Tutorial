@@ -359,7 +359,7 @@ La méthode `calculate()` de la classe `Object` effectue un bilan thermique pour
 
    .. math::
 
-      \text{Outlet.P} = \text{Inlet.P} - \text{P\_drop}
+      \text{Outlet.P} = \text{Inlet.P} - \text{P_drop}
 
 2. **Acquisition des Paramètres d'Entrée :**
    
@@ -371,9 +371,9 @@ La méthode `calculate()` de la classe `Object` effectue un bilan thermique pour
 
    .. math::
 
-      \text{T\_in} = \text{air\_humide\_NB.Air3\_Tdb}(\frac{\text{HA\_in}}{1000}, \text{Inlet.P}, \text{h\_in})
+      \text{T\_in} = \text{air_humide\_NB.Air3\_Tdb}(\frac{\text{HA_in}}{1000}, \text{Inlet.P}, \text{h_in})
    .. math::
-      \text{m\_as} = \frac{\text{F\_kgs}}{(1 + \frac{\text{HA\_in}}{1000})}
+      \text{m\_as} = \frac{\text{F_kgs}}{(1 + \frac{\text{HA_in}}{1000})}
 
 4. **Calcul de l'Enthalpie et du Réchauffement Sensible :**
    
