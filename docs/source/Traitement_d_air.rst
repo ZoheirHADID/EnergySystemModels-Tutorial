@@ -1,6 +1,6 @@
 .. _titre_section:
 
-Description des Fonctions de Calcul Thermodynamique avec Équations
+Fonctions de calcul d'air humide
 ==================================================================
 
 Ce document fournit une explication détaillée des fonctions Python pour divers calculs thermodynamiques, en mettant l'accent sur les équations et corrélations utilisées.
