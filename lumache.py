@@ -1,8 +1,8 @@
 """
-EnergySystemModels - Python library for cooks and food lovers.
+EnergySystemModels - Energy systems models are the mathematical models that are developed in order to represent as reliably as possible various energy-related problems.
 """
 
-__version__ = "0.1.0"
+__version__ = "0.1.21"
 
 
 class InvalidKindError(Exception):

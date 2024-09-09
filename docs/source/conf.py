@@ -2,8 +2,8 @@
 
 # -- Project information
 
-project = 'Lumache'
-copyright = '2021, Graziella'
+project = 'EnergySystemModels'
+copyright = '2024, Zoheir HADID'
 author = 'Graziella'
 
 release = '0.1'
