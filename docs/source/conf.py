@@ -36,7 +36,4 @@ epub_show_urls = 'footnote'
 
 # -- Language configuration
 
-# Configure language-specific directories manually
 language = None  # Default language is English
-
-# You do not need to configure `locale_dirs` for manual translations
