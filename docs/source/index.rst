@@ -17,6 +17,8 @@ Contents
 --------
 
 .. toctree::
-
+   .. Thermodynamic_Cycles_Package
+   
    usage
+   Traitement_d_air
    api
