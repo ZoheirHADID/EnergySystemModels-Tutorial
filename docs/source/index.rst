@@ -1,27 +1,14 @@
-.. Welcome to EnergySystemModels's documentation!
-.. ===================================
+Welcome to EnergySystemModels's Documentation!
+================================================
 
-.. **EnergySystemModels** is a Python library designed to help in the optimization of energy systems and the calculation of energy savings. It provides mathematical models developed to reliably address and solve a variety of energy-related problems.
+This is the main entry point for the EnergySystemModels documentation. You can access the documentation in multiple languages.
 
-.. Check out the :doc:`usage` section for further information, including
-.. how to :ref:`installation` the project.
+Available Languages
+-------------------
+- **English**: Comprehensive documentation in English.
+- **Français**: Documentation en français.
 
-.. .. note::
-
-..    This project is under active development.
-
-.. Contents
-.. --------
-
-.. .. toctree::
-
-..    Thermodynamic Cycles Package
-..    Traitement_d_air.rst
-..    usage
-..    api
-
-Welcome to EnergySystemModels's documentation!
-===================================
+Please choose your preferred language from the links below:
 
 .. toctree::
    :maxdepth: 2
@@ -32,4 +19,5 @@ Welcome to EnergySystemModels's documentation!
 
 .. note::
 
-   You can access the documentation in different languages using the links above.
+   To access the documentation in different languages, use the links provided above. 
+   Select the language that best suits your needs.
