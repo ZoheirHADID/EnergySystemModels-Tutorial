@@ -4,7 +4,7 @@
 
 project = 'EnergySystemModels'
 copyright = '2024, Zoheir HADID'
-author = 'Graziella'
+author = 'Zoheir HADID'
 
 release = '0.1'
 version = '0.1.0'
