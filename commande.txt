@@ -1,23 +1,7 @@
-sphinx-quickstart
-
-sphinx-build -b gettext source _build/gettext
-
-mkdir -p docs/source/en
-mkdir -p docs/source/fr
-
-sphinx-build -b gettext docs _build/gettext
-
-##### Construire la Documentation Anglais/français
-sphinx-build -b html source _build/html
-sphinx-build -b html -D language=fr source _build/html
-
-###Générer les Fichiers de Traduction
-sphinx-build -b gettext source _build/gettext
-
-
-#érifiez les versions de vos dépendances
-python -m pip install --upgrade -r docs/requirements.txt
-
+#####Create translatable files
+cd docs
+cd source
+sphinx-build -b gettext . _build/gettext
 
 
 
