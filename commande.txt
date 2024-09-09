@@ -1,8 +1,13 @@
-#####Create translatable files
-cd docs
-cd source
-sphinx-build -b gettext . _build/gettext
+1.3 Initialize the English Version
+
+cd docs/en
+sphinx-quickstart
 
 
+1.4 Initialize the fr Version
+cd..
+cd..
+cd docs/fr
 
-
+Step 2: Configure Settings
+2.1 Create .readthedocs.yaml File
