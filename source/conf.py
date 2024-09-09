@@ -1,10 +1,19 @@
 # -- Path setup --------------------------------------------------------------
 
-import os
+
 import sys
 from datetime import datetime
 
-sys.path.insert(0, os.path.abspath('.'))
+import os
+
+# Use the special output directory for Read the Docs if detected
+if os.environ.get('READTHEDOCS') == 'True':
+    html_output_dir = os.environ.get('READTHEDOCS_OUTPUT', '_build/html')
+else:
+    html_output_dir = '_build/html'
+
+# Assurez-vous que Sphinx utilise le bon répertoire de sortie
+html_build_dir = os.path.join(html_output_dir, 'html')
 
 # -- Project information -----------------------------------------------------
 
