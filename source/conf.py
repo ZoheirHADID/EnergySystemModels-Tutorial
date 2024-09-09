@@ -6,11 +6,14 @@ from datetime import datetime
 
 import os
 
-# Use the special output directory for Read the Docs if detected
-if os.environ.get('READTHEDOCS') == 'True':
-    html_output_dir = os.environ.get('READTHEDOCS_OUTPUT', '_build/html')
-else:
-    html_output_dir = '_build/html'
+# Define the canonical URL if you are using a custom domain on Read the Docs
+html_baseurl = os.environ.get("READTHEDOCS_CANONICAL_URL", "")
+
+# Tell Jinja2 templates the build is running on Read the Docs
+if os.environ.get("READTHEDOCS", "") == "True":
+    if "html_context" not in globals():
+        html_context = {}
+    html_context["READTHEDOCS"] = True
 
 # Assurez-vous que Sphinx utilise le bon répertoire de sortie
 html_build_dir = os.path.join(html_output_dir, 'html')
