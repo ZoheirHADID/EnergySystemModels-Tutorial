@@ -33,3 +33,9 @@ html_theme = 'sphinx_rtd_theme'
 
 # -- Options for EPUB output
 epub_show_urls = 'footnote'
+
+# -- Language configuration
+
+language = None  # Default language is English
+
+# Note: If you manually manage directories `en` and `fr`, no need to set `locale_dirs`.
