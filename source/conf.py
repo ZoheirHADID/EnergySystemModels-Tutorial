@@ -19,7 +19,7 @@ html_static_path = ['_static']
 html_theme = 'alabaster'
 
 # Configuration pour les langues
-language = None  # Utilisez None pour l'anglais
+language = 'en'
 locale_dirs = ['locale/']  # Répertoire pour les fichiers de traduction
 
 # Configuration des langues pour le build
