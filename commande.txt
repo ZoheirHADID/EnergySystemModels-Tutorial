@@ -15,5 +15,10 @@ sphinx-build -b html -D language=fr source _build/html
 sphinx-build -b gettext source _build/gettext
 
 
+#érifiez les versions de vos dépendances
+python -m pip install --upgrade -r docs/requirements.txt
+
+
+
 
 
