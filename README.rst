@@ -6,4 +6,4 @@ with some basic Sphinx docs.
 
 Read the tutorial here:
 
-https://energysystemmodels-tutorial.readthedocs.io/en/latest/
+https://docs.readthedocs.io/en/stable/tutorial/
