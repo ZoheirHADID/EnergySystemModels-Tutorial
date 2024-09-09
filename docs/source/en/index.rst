@@ -1,16 +1,10 @@
-Welcome to EnergySystemModels's Documentation!
-================================================
+.. EnergySystemModels documentation master file, created by
+   sphinx-quickstart on Sun Sep  9 12:34:56 2024.
+   You can adapt this file completely to your liking, but it should at least
+   contain the root `toctree` directive.
 
-**EnergySystemModels** is a Python library designed to help in the optimization of energy systems and the calculation of energy savings.
-
-Check out the :doc:`usage` section for further information, including how to :ref:`installation` the project.
-
-.. note::
-
-   This project is under active development.
-
-Contents
---------
+Welcome to EnergySystemModels's documentation!
+=============================================
 
 .. toctree::
    :maxdepth: 2
